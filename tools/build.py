@@ -883,11 +883,19 @@ W["contact/index.html"] = layout(
 
 # ----------------------------------------------------------
 # 書き出し
+# テンプレート内はルート相対(/news/ など)で記述し、出力時に
+# 各ページの階層に応じた相対パスへ変換する。これにより
+# GitHub Pages のサブディレクトリ公開(/sumiyoshidenki/)や
+# file:// での直接閲覧でも動作する。
+# WPテーマ化時は変換せずルート相対のままでよい。
 # ----------------------------------------------------------
 if __name__ == "__main__":
     for path, content in W.items():
+        depth = path.count("/")
+        rel = "../" * depth if depth else "./"
+        content = content.replace('href="/', f'href="{rel}').replace('src="/', f'src="{rel}')
         full = os.path.join(ROOT, path)
         os.makedirs(os.path.dirname(full), exist_ok=True)
         with open(full, "w", encoding="utf-8") as f:
             f.write(content)
-    print(f"generated {len(W)} pages")
+    print(f"generated {len(W)} pages (relative paths)")
