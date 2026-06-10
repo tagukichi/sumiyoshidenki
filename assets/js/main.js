@@ -19,8 +19,11 @@
       nav.classList.toggle("is-open", !expanded);
       document.body.style.overflow = expanded ? "" : "hidden";
     });
+    // リンク選択時、またはメニュー外（下部のブラー領域 = ::after）タップ時に閉じる
     nav.addEventListener("click", function (e) {
-      if (e.target.closest("a")) {
+      var onBackdrop =
+        e.target === nav && e.clientY >= nav.getBoundingClientRect().bottom;
+      if (e.target.closest("a") || onBackdrop) {
         toggle.setAttribute("aria-expanded", "false");
         nav.classList.remove("is-open");
         document.body.style.overflow = "";

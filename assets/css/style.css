@@ -808,13 +808,15 @@ iframe { max-width: 100%; }
 }
 @media (max-width: 1040px) {
   .nav-toggle { display: block; }
-  /* メニューはヘッダーの下から表示（告知バー＋ヘッダーは見えたまま） */
+  /* backdrop-filterはfixed子要素(メニュー)の基準をヘッダーに変えてしまうため無効化 */
+  .site-header { backdrop-filter: none; }
+  /* メニューはヘッダー下〜80vhに表示（告知バー＋ヘッダーは見えたまま） */
   .global-nav {
     position: fixed;
     top: calc(var(--announce-height) + var(--header-height));
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 20vh;
     background: rgba(8, 29, 57, 0.97);
     flex-direction: column;
     justify-content: flex-start;
@@ -823,7 +825,20 @@ iframe { max-width: 100%; }
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
     overflow-y: auto;
-    padding-block: 40px 60px;
+    padding-block: 40px 48px;
+    box-shadow: 0 12px 32px rgba(8, 29, 57, 0.35);
+  }
+  /* 残り20vhはブラーの背景オーバーレイ（タップでメニューを閉じる） */
+  .global-nav::after {
+    content: "";
+    position: fixed;
+    top: 80vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(8, 29, 57, 0.25);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
   }
   .global-nav.is-open { opacity: 1; visibility: visible; }
   .global-nav__list { flex-direction: column; text-align: center; gap: 4px; }
