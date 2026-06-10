@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お知らせ – 住吉電機株式会社</title>
+<meta name="description" content="住吉電機株式会社からのお知らせ一覧です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<!-- ▼ header（WP化時に header.php へ切り出し） -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="site-logo">
+      <span class="site-logo__name">住吉電機株式会社</span>
+      <span class="site-logo__en">Sumiyoshi Electric Co.,Ltd</span>
+    </a>
+    <nav class="global-nav" id="global-nav">
+      <ul class="global-nav__list">
+        <li><a href="/">ホーム</a></li>
+        <li><a href="/business/">事業内容</a></li>
+        <li><a href="/works/">施工実績</a></li>
+        <li><a href="/news/" aria-current="page">お知らせ</a></li>
+        <li><a href="/information/company/">会社概要</a></li>
+        <li><a href="/information/history/">沿革</a></li>
+      </ul>
+      <a class="btn-contact" href="/contact/">お問い合わせ</a>
+    </nav>
+    <div class="header-contact">
+      <p class="header-tel">
+        <span class="header-tel__number">044-755-6161</span>
+        <span class="header-tel__note">お電話でのお問い合わせ</span>
+      </p>
+      <a class="btn-contact" href="/contact/">お問い合わせ</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- ▲ header -->
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header__label">News</p>
+      <h1 class="page-header__title">お知らせ</h1>
+    </div>
+  </div>
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <div class="container">
+      <ol>
+        <li><a href="/">ホーム</a></li>
+        <li>お知らせ</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <!-- TODO: 現サイトの投稿一覧を確認後、過去記事をすべて追加（WP化後は WP_Query で出力） -->
+      <ul class="news-list fade-in">
+        <li class="news-list__item">
+          <a href="/news/kawasaki-city-hall-solar.html" class="news-list__link">
+            <time class="news-list__date">date: 要確認</time>
+            <span class="news-list__cat">施工実績</span>
+            <span class="news-list__title">川崎市新本庁舎太陽光発電設備設置工事が完成しました</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2 class="cta__title">電気設備のことなら、お気軽にご相談ください</h2>
+      <div class="cta__actions">
+        <p class="cta__tel">044-755-6161<small>受付時間：要確認</small></p>
+        <a href="/contact/" class="btn-primary">お問い合わせフォーム</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ▼ footer（WP化時に footer.php へ切り出し） -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="footer-company">
+      <p class="footer-company__name">住吉電機株式会社</p>
+      <p class="footer-company__en">Sumiyoshi Electric Co.,Ltd</p>
+      <address class="footer-company__address">
+        〒213-0024 神奈川県川崎市高津区明津14番地1<br>
+        TEL：044-755-6161
+      </address>
+    </div>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="/">ホーム</a></li>
+        <li><a href="/business/">事業内容</a></li>
+        <li><a href="/works/">施工実績</a></li>
+      </ul>
+      <ul>
+        <li><a href="/news/">お知らせ</a></li>
+        <li><a href="/information/company/">会社概要</a></li>
+        <li><a href="/information/history/">沿革</a></li>
+        <li><a href="/contact/">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="copyright">&copy; Sumiyoshi Electric Co.,Ltd All Rights Reserved.</p>
+</footer>
+<!-- ▲ footer -->
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
