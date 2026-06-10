@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>お知らせ – 住吉電機株式会社</title>
+<title>News &amp; Topics – 住吉電機株式会社</title>
 <meta name="description" content="住吉電機株式会社からのお知らせ一覧です。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,108 +12,200 @@
 </head>
 <body>
 
-<!-- ▼ header（WP化時に header.php へ切り出し） -->
+<!-- ▼ ここから header.php 相当 -->
+<div class="announce-bar">
+  <a href="/recruit/">一緒に働ける仲間を住吉電機株式会社では募集しております。</a>
+</div>
 <header class="site-header">
   <div class="site-header__inner">
     <a href="/" class="site-logo">
-      <span class="site-logo__name">住吉電機株式会社</span>
-      <span class="site-logo__en">Sumiyoshi Electric Co.,Ltd</span>
+      <img src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/logo251106.svg" alt="住吉電機株式会社 ロゴ" width="44" height="44">
+      <span class="site-logo__text">
+        <span class="site-logo__name">住吉電機株式会社</span>
+        <span class="site-logo__en">Sumiyoshi Electric Co.,Ltd</span>
+      </span>
     </a>
     <nav class="global-nav" id="global-nav">
       <ul class="global-nav__list">
-        <li><a href="/">ホーム</a></li>
-        <li><a href="/business/">事業内容</a></li>
-        <li><a href="/works/">施工実績</a></li>
-        <li><a href="/news/" aria-current="page">お知らせ</a></li>
-        <li><a href="/information/company/">会社概要</a></li>
-        <li><a href="/information/history/">沿革</a></li>
+        <li><a href="/">トップページ</a></li>
+        <li><a href="/news/" aria-current="page">News &amp; Topics</a></li>
+        <li class="has-dropdown">
+          <a href="/information/">会社案内</a>
+          <ul class="dropdown">
+            <li><a href="/information/greeting/">代表挨拶</a></li>
+            <li><a href="/information/company/">会社概要</a></li>
+            <li><a href="/information/history/">沿　革</a></li>
+            <li><a href="/information/access/">アクセス</a></li>
+          </ul>
+        </li>
+        <li><a href="/jisseki/">施工実績</a></li>
+        <li><a href="/recruit/">求人情報</a></li>
+        <li><a href="/contact/">お問い合わせ</a></li>
       </ul>
-      <a class="btn-contact" href="/contact/">お問い合わせ</a>
+      <a class="btn-recruit" href="/recruit/">求人情報</a>
     </nav>
     <div class="header-contact">
       <p class="header-tel">
-        <span class="header-tel__number">044-755-6161</span>
+        <span class="header-tel__number">044-755-6161（代）</span>
         <span class="header-tel__note">お電話でのお問い合わせ</span>
       </p>
-      <a class="btn-contact" href="/contact/">お問い合わせ</a>
+      <a class="btn-recruit" href="/recruit/">求人情報</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
-<!-- ▲ header -->
+<!-- ▲ ここまで header.php 相当 -->
 
 <main>
   <div class="page-header">
     <div class="container">
-      <p class="page-header__label">News</p>
-      <h1 class="page-header__title">お知らせ</h1>
+      <p class="page-header__label">News &amp; Topics</p>
+      <h1 class="page-header__title">News &amp; Topics</h1>
     </div>
   </div>
   <nav class="breadcrumb" aria-label="パンくずリスト">
     <div class="container">
       <ol>
         <li><a href="/">ホーム</a></li>
-        <li>お知らせ</li>
+        <li>News &amp; Topics</li>
       </ol>
     </div>
   </nav>
 
   <section class="section">
     <div class="container">
-      <!-- TODO: 現サイトの投稿一覧を確認後、過去記事をすべて追加（WP化後は WP_Query で出力） -->
       <ul class="news-list fade-in">
         <li class="news-list__item">
-          <a href="/news/kawasaki-city-hall-solar.html" class="news-list__link">
-            <time class="news-list__date">date: 要確認</time>
-            <span class="news-list__cat">施工実績</span>
+          <a href="/news/aed.html" class="news-list__link">
+            <time class="news-list__date" datetime="2025-05-27">2025/05/27</time>
+            <span class="news-list__title">AED設置</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/solar-v2h.html" class="news-list__link">
+            <time class="news-list__date" datetime="2024-10-09">2024/10/09</time>
+            <span class="news-list__title">太陽光発電設備V2H導入</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/ev-car.html" class="news-list__link">
+            <time class="news-list__date" datetime="2024-02-14">2024/02/14</time>
+            <span class="news-list__title">EV車を導入しました</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/kawasaki-cityhall-solar-completed.html" class="news-list__link">
+            <time class="news-list__date" datetime="2024-02-14">2024/02/14</time>
             <span class="news-list__title">川崎市新本庁舎太陽光発電設備設置工事が完成しました</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/nagasawa-lighting-completed.html" class="news-list__link">
+            <time class="news-list__date" datetime="2023-04-05">2023/04/05</time>
+            <span class="news-list__title">長沢浄水場ほか２箇所　照明設備等改良工事が完成しました。</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/kawasaki-cityhall-solar-logo.html" class="news-list__link">
+            <time class="news-list__date" datetime="2022-03-15">2022/03/15</time>
+            <span class="news-list__title">川崎市新本庁舎太陽光発電設備設置工事　ロゴの掲示</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/tama-fire-station-completed.html" class="news-list__link">
+            <time class="news-list__date" datetime="2022-03-03">2022/03/03</time>
+            <span class="news-list__title">多摩消防署栗谷出張所改築電気その他設備工事　完成</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/nagasawa-lighting-order.html" class="news-list__link">
+            <time class="news-list__date" datetime="2022-03-03">2022/03/03</time>
+            <span class="news-list__title">長沢浄水場ほか２箇所　照明設備等改良工事　受注</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/contact-form.html" class="news-list__link">
+            <time class="news-list__date" datetime="2021-10-11">2021/10/11</time>
+            <span class="news-list__title">問い合わせについて</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/kawasaki-cityhall-solar-order.html" class="news-list__link">
+            <time class="news-list__date" datetime="2021-10-11">2021/10/11</time>
+            <span class="news-list__title">川崎市新本庁舎太陽光発電設備設置工事　受注</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/sdgs-partner.html" class="news-list__link">
+            <time class="news-list__date" datetime="2021-08-16">2021/08/16</time>
+            <span class="news-list__title">かわさきSDGsパートナー</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/hp-updating.html" class="news-list__link">
+            <time class="news-list__date" datetime="2021-08-10">2021/08/10</time>
+            <span class="news-list__title">ホームページ変更中</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/current-construction.html" class="news-list__link">
+            <time class="news-list__date" datetime="2021-05-20">2021/05/20</time>
+            <span class="news-list__title">現在施工中の工事</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/hp-renewal.html" class="news-list__link">
+            <time class="news-list__date" datetime="2021-05-20">2021/05/20</time>
+            <span class="news-list__title">ホームページ変更</span>
           </a>
         </li>
       </ul>
     </div>
   </section>
-
-  <section class="cta">
-    <div class="container">
-      <h2 class="cta__title">電気設備のことなら、お気軽にご相談ください</h2>
-      <div class="cta__actions">
-        <p class="cta__tel">044-755-6161<small>受付時間：要確認</small></p>
-        <a href="/contact/" class="btn-primary">お問い合わせフォーム</a>
-      </div>
-    </div>
-  </section>
 </main>
 
-<!-- ▼ footer（WP化時に footer.php へ切り出し） -->
+<!-- ▼ ここから footer.php 相当 -->
 <footer class="site-footer">
   <div class="container site-footer__inner">
     <div class="footer-company">
-      <p class="footer-company__name">住吉電機株式会社</p>
-      <p class="footer-company__en">Sumiyoshi Electric Co.,Ltd</p>
+      <div class="footer-company__logo">
+        <img src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/logo251106.svg" alt="" width="40" height="40">
+        <span class="footer-company__name">住吉電機株式会社</span>
+      </div>
       <address class="footer-company__address">
-        〒213-0024 神奈川県川崎市高津区明津14番地1<br>
-        TEL：044-755-6161
+        神奈川県川崎市高津区明津14番地1<br>
+        044-755-6161（代）
       </address>
     </div>
     <nav class="footer-nav">
       <ul>
-        <li><a href="/">ホーム</a></li>
-        <li><a href="/business/">事業内容</a></li>
-        <li><a href="/works/">施工実績</a></li>
+        <li><a href="/">トップページ</a></li>
+        <li><a href="/news/">News &amp; Topics</a></li>
+        <li><a href="/jisseki/">施工実績</a></li>
+        <li><a href="/recruit/">求人情報</a></li>
       </ul>
       <ul>
-        <li><a href="/news/">お知らせ</a></li>
+        <li><a href="/information/">会社案内</a></li>
+        <li><a href="/information/greeting/">代表挨拶</a></li>
         <li><a href="/information/company/">会社概要</a></li>
         <li><a href="/information/history/">沿革</a></li>
+        <li><a href="/information/access/">アクセス</a></li>
         <li><a href="/contact/">お問い合わせ</a></li>
       </ul>
     </nav>
   </div>
-  <p class="copyright">&copy; Sumiyoshi Electric Co.,Ltd All Rights Reserved.</p>
+  <div class="copyright">
+    <div class="container">
+      <span>Copyright © SUMIYOSHI ELECTRIC CO.,LTD All Rights Reserved.</span>
+      <span><a href="#">プライバシーポリシー</a></span><!-- TODO: 現サイトのプライバシーポリシーのリンク先確認 -->
+      <span>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</span>
+    </div>
+  </div>
 </footer>
-<!-- ▲ footer -->
+<button class="to-top" aria-label="ページ上部へ戻る">↑</button>
+<!-- ▲ ここまで footer.php 相当 -->
 
 <script src="/assets/js/main.js"></script>
 </body>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>住吉電機株式会社 – SUMIYOSHI ELECTRIC CO.,LTD</title>
-<meta name="description" content="住吉電機株式会社は、神奈川県川崎市高津区の電気工事会社です。電気配線工事・計装工事・消防施設工事・電気通信工事を承っております。">
+<meta name="description" content="住吉電機株式会社は、川崎市で電気工事を営んで半世紀以上。技術力と信頼でその間に培ったお客様に安心をお届けします。電気配線工事・計装工事・消防施設工事・電気通信工事。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -12,215 +12,297 @@
 </head>
 <body>
 
-<!-- ▼ header（WP化時に header.php へ切り出し） -->
+<!-- ▼ ここから header.php 相当 -->
+<div class="announce-bar">
+  <a href="/recruit/">一緒に働ける仲間を住吉電機株式会社では募集しております。</a>
+</div>
 <header class="site-header">
   <div class="site-header__inner">
     <a href="/" class="site-logo">
-      <span class="site-logo__name">住吉電機株式会社</span>
-      <span class="site-logo__en">Sumiyoshi Electric Co.,Ltd</span>
+      <img src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/logo251106.svg" alt="住吉電機株式会社 ロゴ" width="44" height="44">
+      <span class="site-logo__text">
+        <span class="site-logo__name">住吉電機株式会社</span>
+        <span class="site-logo__en">Sumiyoshi Electric Co.,Ltd</span>
+      </span>
     </a>
     <nav class="global-nav" id="global-nav">
       <ul class="global-nav__list">
-        <li><a href="/" aria-current="page">ホーム</a></li>
-        <li><a href="/business/">事業内容</a></li>
-        <li><a href="/works/">施工実績</a></li>
-        <li><a href="/news/">お知らせ</a></li>
-        <li><a href="/information/company/">会社概要</a></li>
-        <li><a href="/information/history/">沿革</a></li>
+        <li><a href="/" aria-current="page">トップページ</a></li>
+        <li><a href="/news/">News &amp; Topics</a></li>
+        <li class="has-dropdown">
+          <a href="/information/">会社案内</a>
+          <ul class="dropdown">
+            <li><a href="/information/greeting/">代表挨拶</a></li>
+            <li><a href="/information/company/">会社概要</a></li>
+            <li><a href="/information/history/">沿　革</a></li>
+            <li><a href="/information/access/">アクセス</a></li>
+          </ul>
+        </li>
+        <li><a href="/jisseki/">施工実績</a></li>
+        <li><a href="/recruit/">求人情報</a></li>
+        <li><a href="/contact/">お問い合わせ</a></li>
       </ul>
-      <a class="btn-contact" href="/contact/">お問い合わせ</a>
+      <a class="btn-recruit" href="/recruit/">求人情報</a>
     </nav>
     <div class="header-contact">
       <p class="header-tel">
-        <span class="header-tel__number">044-755-6161</span>
+        <span class="header-tel__number">044-755-6161（代）</span>
         <span class="header-tel__note">お電話でのお問い合わせ</span>
       </p>
-      <a class="btn-contact" href="/contact/">お問い合わせ</a>
+      <a class="btn-recruit" href="/recruit/">求人情報</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
-<!-- ▲ header -->
+<!-- ▲ ここまで header.php 相当 -->
 
 <main>
-
-  <!-- メインビジュアル ※キャッチコピーは仮。現サイトの文言確認後に差し替え -->
+  <!-- メインビジュアル（現サイトのキャッチコピーを縦書きで継承） -->
   <section class="hero">
-    <div class="container hero__inner">
-      <h1 class="hero__catch">確かな技術で、<br>暮らしと産業に<span class="accent">電気</span>を。</h1>
-      <p class="hero__lead">住吉電機株式会社は、昭和28年の創業以来、川崎市を中心に電気配線工事・計装工事・消防施設工事・電気通信工事を手がけてまいりました。長年の経験と確かな技術で、安心・安全な電気設備をお届けします。</p>
-      <div class="hero__actions">
-        <a href="/business/" class="btn-primary">事業内容を見る</a>
-        <a href="/contact/" class="btn-ghost">お問い合わせ</a>
-      </div>
-    </div>
+    <div class="hero__slide" style="background-image:url('https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/Group-3744.png')"></div>
+    <div class="hero__slide" style="background-image:url('https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/Group-3764-1.png')"></div>
+    <p class="hero__catch">
+      <span>川崎市で電気工事を</span>
+      <span>営んで半世紀以上。</span>
+      <span>技術力と信頼で</span>
+      <span>その間に培った</span>
+      <span>お客様に安心をお届けします。</span>
+    </p>
+    <div class="hero__dots" role="tablist" aria-label="スライド切り替え"></div>
   </section>
 
-  <!-- 強み -->
+  <!-- News & Topics -->
   <section class="section">
     <div class="container">
       <div class="section__head fade-in">
-        <span class="section__label">Strength</span>
-        <h2 class="section__title">住吉電機が選ばれる理由</h2>
-      </div>
-      <div class="strengths">
-        <div class="strength-card fade-in">
-          <span class="strength-card__num">01</span>
-          <h3 class="strength-card__title">創業70年を超える実績</h3>
-          <p class="strength-card__text">昭和28年の創業以来、地域とともに歩み続けてきた信頼と経験。長年培ったノウハウで、確実な施工をお約束します。</p>
-        </div>
-        <div class="strength-card fade-in">
-          <span class="strength-card__num">02</span>
-          <h3 class="strength-card__title">公共施設の施工実績</h3>
-          <p class="strength-card__text">川崎市新本庁舎の太陽光発電設備設置工事をはじめ、公共施設・オフィスビルなど幅広い施工実績があります。</p>
-        </div>
-        <div class="strength-card fade-in">
-          <span class="strength-card__num">03</span>
-          <h3 class="strength-card__title">電気のことなら一括対応</h3>
-          <p class="strength-card__text">電気配線・計装・消防施設・電気通信まで、建物の電気設備をワンストップで対応。お気軽にご相談ください。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 事業内容 -->
-  <section class="section section--gray" id="business">
-    <div class="container">
-      <div class="section__head fade-in">
-        <span class="section__label">Business</span>
-        <h2 class="section__title">事業内容</h2>
-        <p class="section__lead">建物や設備の「電気」に関わる工事を幅広く手がけています。</p>
-      </div>
-      <div class="services">
-        <article class="service-card fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <h3 class="service-card__title">電気配線工事</h3>
-          <p class="service-card__text">ビル・工場・公共施設などの受変電設備、幹線・動力設備、照明・コンセント設備等の設計・施工を行います。</p>
-        </article>
-        <article class="service-card fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 13.5"/></svg>
-          </div>
-          <h3 class="service-card__title">計装工事</h3>
-          <p class="service-card__text">プラント・生産設備等の計測機器・制御装置の取付および配線工事を行い、設備の安定稼働を支えます。</p>
-        </article>
-        <article class="service-card fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 4 6 6 6 11a6 6 0 0 1-12 0c0-5 4-7 6-11z"/></svg>
-          </div>
-          <h3 class="service-card__title">消防施設工事</h3>
-          <p class="service-card__text">自動火災報知設備・誘導灯設備など、建物の安全を守る消防用設備の設置・改修工事を行います。</p>
-        </article>
-        <article class="service-card fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a14 14 0 0 1 20 0"/><path d="M5.5 12a9 9 0 0 1 13 0"/><path d="M9 15.5a4.5 4.5 0 0 1 6 0"/><circle cx="12" cy="19" r="1"/></svg>
-          </div>
-          <h3 class="service-card__title">電気通信工事</h3>
-          <p class="service-card__text">LAN・電話設備、放送設備、防犯カメラなど、情報通信インフラの構築・更新工事を行います。</p>
-        </article>
-      </div>
-      <div class="section__more fade-in">
-        <a href="/business/" class="btn-more">事業内容の詳細へ</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- お知らせ -->
-  <section class="section">
-    <div class="container">
-      <div class="section__head fade-in">
-        <span class="section__label">News</span>
+        <span class="section__label">News &amp; Topics</span>
         <h2 class="section__title">お知らせ</h2>
       </div>
       <ul class="news-list fade-in">
-        <!-- 現サイトの投稿一覧の確認後、過去記事を追加 -->
         <li class="news-list__item">
-          <a href="/news/kawasaki-city-hall-solar.html" class="news-list__link">
-            <time class="news-list__date" datetime="2024-01-01">date: 要確認</time>
-            <span class="news-list__cat">施工実績</span>
+          <a href="/news/aed.html" class="news-list__link">
+            <time class="news-list__date" datetime="2025-05-27">2025/05/27</time>
+            <span class="news-list__title">AED設置</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/solar-v2h.html" class="news-list__link">
+            <time class="news-list__date" datetime="2024-10-09">2024/10/09</time>
+            <span class="news-list__title">太陽光発電設備V2H導入</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/ev-car.html" class="news-list__link">
+            <time class="news-list__date" datetime="2024-02-14">2024/02/14</time>
+            <span class="news-list__title">EV車を導入しました</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/kawasaki-cityhall-solar-completed.html" class="news-list__link">
+            <time class="news-list__date" datetime="2024-02-14">2024/02/14</time>
             <span class="news-list__title">川崎市新本庁舎太陽光発電設備設置工事が完成しました</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/nagasawa-lighting-completed.html" class="news-list__link">
+            <time class="news-list__date" datetime="2023-04-05">2023/04/05</time>
+            <span class="news-list__title">長沢浄水場ほか２箇所　照明設備等改良工事が完成しました。</span>
+          </a>
+        </li>
+        <li class="news-list__item">
+          <a href="/news/kawasaki-cityhall-solar-logo.html" class="news-list__link">
+            <time class="news-list__date" datetime="2022-03-15">2022/03/15</time>
+            <span class="news-list__title">川崎市新本庁舎太陽光発電設備設置工事　ロゴの掲示</span>
           </a>
         </li>
       </ul>
       <div class="section__more fade-in">
-        <a href="/news/" class="btn-more">お知らせ一覧へ</a>
+        <a href="/news/" class="btn-more">お知らせ一覧はコチラ＞</a>
       </div>
     </div>
   </section>
 
-  <!-- 会社情報サマリー -->
+  <!-- 会社案内 -->
   <section class="section section--gray">
     <div class="container">
-      <div class="section__head fade-in">
-        <span class="section__label">Company</span>
-        <h2 class="section__title">会社情報</h2>
+      <div class="section__head section__head--center fade-in">
+        <span class="section__label">Information</span>
+        <h2 class="section__title">会社案内</h2>
       </div>
-      <div class="company-summary fade-in">
-        <table class="info-table">
-          <tbody>
-            <tr><th>会社名</th><td>住吉電機株式会社</td></tr>
-            <tr><th>所在地</th><td>〒213-0024<br>神奈川県川崎市高津区明津14番地1</td></tr>
-            <tr><th>電話番号</th><td>044-755-6161</td></tr>
-            <tr><th>代表者</th><td>代表取締役　高橋 賢次</td></tr>
-            <tr><th>事業内容</th><td>電気配線工事・計装工事・消防施設工事・電気通信工事／貸ビル業</td></tr>
-          </tbody>
-        </table>
-        <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://maps.google.com/maps?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E5%B7%9D%E5%B4%8E%E5%B8%82%E9%AB%98%E6%B4%A5%E5%8C%BA%E6%98%8E%E6%B4%A514-1&output=embed"
-          title="住吉電機株式会社 所在地"></iframe>
+      <div class="info-cards">
+        <a class="info-card fade-in" href="/information/greeting/">
+          <img class="info-card__img" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/05/image-9.png" alt="代表挨拶" loading="lazy">
+          <div class="info-card__body">
+            <span class="info-card__title">代表挨拶</span>
+            <span class="info-card__arrow">→</span>
+          </div>
+        </a>
+        <a class="info-card fade-in" href="/information/company/">
+          <img class="info-card__img" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/06/Frame-8.png" alt="会社概要" loading="lazy">
+          <div class="info-card__body">
+            <span class="info-card__title">会社概要</span>
+            <span class="info-card__arrow">→</span>
+          </div>
+        </a>
+        <a class="info-card fade-in" href="/information/history/">
+          <img class="info-card__img" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/06/56b7b0de4be422688604b363ad508afd-3.png" alt="沿革" loading="lazy">
+          <div class="info-card__body">
+            <span class="info-card__title">沿革</span>
+            <span class="info-card__arrow">→</span>
+          </div>
+        </a>
+        <a class="info-card fade-in" href="/information/access/">
+          <img class="info-card__img" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/05/image-8.png" alt="アクセス" loading="lazy">
+          <div class="info-card__body">
+            <span class="info-card__title">アクセス</span>
+            <span class="info-card__arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 施工実績 -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head section__head--center fade-in">
+        <span class="section__label">Works</span>
+        <h2 class="section__title">施工実績</h2>
+      </div>
+      <div class="works-grid works-grid--top">
+        <a class="work-card fade-in" href="/jisseki/road-lighting-4.html">
+          <img class="work-card__img" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/05/25319-rotated-e1748761477667.jpg" alt="道路照明設置その４" loading="lazy">
+          <div class="work-card__body">
+            <h3 class="work-card__title">道路照明設置その４</h3>
+            <p class="work-card__date">令和6年3月</p>
+          </div>
+        </a>
+        <a class="work-card fade-in" href="/jisseki/hosoyama-pump-ups.html">
+          <img class="work-card__img" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/18509fd22173d4e5c04bacb18eae425e.jpg" alt="細山送水ポンプ所　監視制御設備用ＵＰＳ更新工事" loading="lazy">
+          <div class="work-card__body">
+            <h3 class="work-card__title">細山送水ポンプ所　監視制御設備用ＵＰＳ更新工事</h3>
+            <p class="work-card__date">令和6年3月</p>
+          </div>
+        </a>
+        <a class="work-card fade-in" href="/jisseki/haisuihonkan-ups.html">
+          <img class="work-card__img" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/05/82e3f4fe4b3f761242349cf14d646747.jpg" alt="１号配水本管配水流量計用ＵＰＳ等修理工事" loading="lazy">
+          <div class="work-card__body">
+            <h3 class="work-card__title">１号配水本管配水流量計用ＵＰＳ等修理工事</h3>
+            <p class="work-card__date">令和6年3月</p>
+          </div>
+        </a>
+        <a class="work-card fade-in" href="/jisseki/nagasawa-lighting.html">
+          <img class="work-card__img" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/1461470b87d3ff0d39b368ad713b24b1.jpg" alt="長沢浄水場ほか２箇所　照明設備等改良工事" loading="lazy">
+          <div class="work-card__body">
+            <h3 class="work-card__title">長沢浄水場ほか２箇所　照明設備等改良工事</h3>
+            <p class="work-card__date">令和5年3月</p>
+          </div>
+        </a>
       </div>
       <div class="section__more fade-in">
-        <a href="/information/company/" class="btn-more">会社概要の詳細へ</a>
+        <a href="/jisseki/" class="btn-more">施工実績はこちら＞</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta">
+  <!-- 求人情報 -->
+  <section class="section section--cream">
     <div class="container">
-      <h2 class="cta__title">電気設備のことなら、お気軽にご相談ください</h2>
-      <p class="cta__text">お見積り・ご相談は無料です。お電話またはお問い合わせフォームよりご連絡ください。</p>
-      <div class="cta__actions">
-        <p class="cta__tel">044-755-6161<small>受付時間：要確認</small></p>
-        <a href="/contact/" class="btn-primary">お問い合わせフォーム</a>
+      <div class="section__head section__head--center fade-in">
+        <span class="section__label">Recruit</span>
+        <h2 class="section__title">求人情報</h2>
+      </div>
+      <div class="recruit-copy fade-in">
+        <p class="recruit-copy__main">正社員募集中！<br>川崎市で半世紀以上つづく電気工事業で一緒に働きませんか？</p>
+        <p class="recruit-copy__sub">未経験から手に職を。寮完備＆土日祝休みで働きやすい環境！</p>
+        <p class="recruit-copy__text">
+          川崎市内中心の現場で転勤なし。施工管理者、現場作業員の募集をしています。<br>
+          しっかりとしたサポート体制で、未経験者も多数活躍中！<br>
+          寮完備で遠方からの応募も歓迎。残業少なめ・土日祝休みで、プライベートも充実。<br>
+          「安定して働きたい」「手に職をつけたい」「長く働きたい」そんな方に最適な職場です。
+        </p>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card fade-in">
+          <span class="stat-card__label">年間休日日数</span>
+          <img class="stat-card__icon" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/06/Group-3750.svg" alt="" loading="lazy">
+          <p class="stat-card__value">120～125<small>日</small></p>
+        </div>
+        <div class="stat-card fade-in">
+          <span class="stat-card__label">平均有給取得日数</span>
+          <img class="stat-card__icon" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/06/Frame-1.svg" alt="" loading="lazy">
+          <p class="stat-card__value">10<small>日</small></p>
+        </div>
+        <div class="stat-card fade-in">
+          <span class="stat-card__label">創業年</span>
+          <img class="stat-card__icon" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/06/Group-3747.svg" alt="" loading="lazy">
+          <p class="stat-card__value">1962<small>年</small></p>
+        </div>
+        <div class="stat-card fade-in">
+          <span class="stat-card__label">平均残業時間</span>
+          <img class="stat-card__icon" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/06/Frame-2.svg" alt="" loading="lazy">
+          <p class="stat-card__value">0.5<small>時間</small></p>
+        </div>
+        <div class="stat-card fade-in">
+          <span class="stat-card__label">平均勤続年数</span>
+          <img class="stat-card__icon" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/06/Group-3748.svg" alt="" loading="lazy">
+          <p class="stat-card__value">20<small>年</small></p>
+        </div>
+        <div class="stat-card fade-in">
+          <span class="stat-card__label">賞与支給日</span>
+          <img class="stat-card__icon" src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/06/Group-3746.svg" alt="" loading="lazy">
+          <p class="stat-card__value">2<small>回</small></p>
+        </div>
+      </div>
+      <div class="section__more fade-in">
+        <a href="/recruit/" class="btn-more">求人情報はこちら＞</a>
       </div>
     </div>
   </section>
-
 </main>
 
-<!-- ▼ footer（WP化時に footer.php へ切り出し） -->
+<!-- ▼ ここから footer.php 相当 -->
 <footer class="site-footer">
   <div class="container site-footer__inner">
     <div class="footer-company">
-      <p class="footer-company__name">住吉電機株式会社</p>
-      <p class="footer-company__en">Sumiyoshi Electric Co.,Ltd</p>
+      <div class="footer-company__logo">
+        <img src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/logo251106.svg" alt="" width="40" height="40">
+        <span class="footer-company__name">住吉電機株式会社</span>
+      </div>
       <address class="footer-company__address">
-        〒213-0024 神奈川県川崎市高津区明津14番地1<br>
-        TEL：044-755-6161
+        神奈川県川崎市高津区明津14番地1<br>
+        044-755-6161（代）
       </address>
     </div>
     <nav class="footer-nav">
       <ul>
-        <li><a href="/">ホーム</a></li>
-        <li><a href="/business/">事業内容</a></li>
-        <li><a href="/works/">施工実績</a></li>
+        <li><a href="/">トップページ</a></li>
+        <li><a href="/news/">News &amp; Topics</a></li>
+        <li><a href="/jisseki/">施工実績</a></li>
+        <li><a href="/recruit/">求人情報</a></li>
       </ul>
       <ul>
-        <li><a href="/news/">お知らせ</a></li>
+        <li><a href="/information/">会社案内</a></li>
+        <li><a href="/information/greeting/">代表挨拶</a></li>
         <li><a href="/information/company/">会社概要</a></li>
         <li><a href="/information/history/">沿革</a></li>
+        <li><a href="/information/access/">アクセス</a></li>
         <li><a href="/contact/">お問い合わせ</a></li>
       </ul>
     </nav>
   </div>
-  <p class="copyright">&copy; Sumiyoshi Electric Co.,Ltd All Rights Reserved.</p>
+  <div class="copyright">
+    <div class="container">
+      <span>Copyright © SUMIYOSHI ELECTRIC CO.,LTD All Rights Reserved.</span>
+      <span><a href="#">プライバシーポリシー</a></span><!-- TODO: 現サイトのプライバシーポリシーのリンク先確認 -->
+      <span>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</span>
+    </div>
+  </div>
 </footer>
-<!-- ▲ footer -->
+<button class="to-top" aria-label="ページ上部へ戻る">↑</button>
+<!-- ▲ ここまで footer.php 相当 -->
 
 <script src="/assets/js/main.js"></script>
 </body>

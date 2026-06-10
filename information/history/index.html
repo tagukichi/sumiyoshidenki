@@ -12,37 +12,51 @@
 </head>
 <body>
 
-<!-- ▼ header（WP化時に header.php へ切り出し） -->
+<!-- ▼ ここから header.php 相当 -->
+<div class="announce-bar">
+  <a href="/recruit/">一緒に働ける仲間を住吉電機株式会社では募集しております。</a>
+</div>
 <header class="site-header">
   <div class="site-header__inner">
     <a href="/" class="site-logo">
-      <span class="site-logo__name">住吉電機株式会社</span>
-      <span class="site-logo__en">Sumiyoshi Electric Co.,Ltd</span>
+      <img src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/logo251106.svg" alt="住吉電機株式会社 ロゴ" width="44" height="44">
+      <span class="site-logo__text">
+        <span class="site-logo__name">住吉電機株式会社</span>
+        <span class="site-logo__en">Sumiyoshi Electric Co.,Ltd</span>
+      </span>
     </a>
     <nav class="global-nav" id="global-nav">
       <ul class="global-nav__list">
-        <li><a href="/">ホーム</a></li>
-        <li><a href="/business/">事業内容</a></li>
-        <li><a href="/works/">施工実績</a></li>
-        <li><a href="/news/">お知らせ</a></li>
-        <li><a href="/information/company/">会社概要</a></li>
-        <li><a href="/information/history/" aria-current="page">沿革</a></li>
+        <li><a href="/">トップページ</a></li>
+        <li><a href="/news/">News &amp; Topics</a></li>
+        <li class="has-dropdown">
+          <a href="/information/" aria-current="page">会社案内</a>
+          <ul class="dropdown">
+            <li><a href="/information/greeting/">代表挨拶</a></li>
+            <li><a href="/information/company/">会社概要</a></li>
+            <li><a href="/information/history/">沿　革</a></li>
+            <li><a href="/information/access/">アクセス</a></li>
+          </ul>
+        </li>
+        <li><a href="/jisseki/">施工実績</a></li>
+        <li><a href="/recruit/">求人情報</a></li>
+        <li><a href="/contact/">お問い合わせ</a></li>
       </ul>
-      <a class="btn-contact" href="/contact/">お問い合わせ</a>
+      <a class="btn-recruit" href="/recruit/">求人情報</a>
     </nav>
     <div class="header-contact">
       <p class="header-tel">
-        <span class="header-tel__number">044-755-6161</span>
+        <span class="header-tel__number">044-755-6161（代）</span>
         <span class="header-tel__note">お電話でのお問い合わせ</span>
       </p>
-      <a class="btn-contact" href="/contact/">お問い合わせ</a>
+      <a class="btn-recruit" href="/recruit/">求人情報</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
-<!-- ▲ header -->
+<!-- ▲ ここまで header.php 相当 -->
 
 <main>
   <div class="page-header">
@@ -55,6 +69,7 @@
     <div class="container">
       <ol>
         <li><a href="/">ホーム</a></li>
+        <li><a href="/information/">会社案内</a></li>
         <li>沿革</li>
       </ol>
     </div>
@@ -62,65 +77,104 @@
 
   <section class="section">
     <div class="container">
-      <div class="article">
-        <!-- TODO: 現サイトの沿革ページの内容を確認後、正確な年表に差し替える。以下は確認済みの情報のみ -->
-        <div class="timeline">
-          <div class="timeline__item">
-            <p class="timeline__year">昭和28年（1953年）11月</p>
-            <p class="timeline__text">創立</p>
-          </div>
-          <div class="timeline__item">
-            <p class="timeline__year">昭和38年（1963年）</p>
-            <p class="timeline__text">住吉電機株式会社 設立</p>
-          </div>
-          <div class="timeline__item">
-            <p class="timeline__year">（以降の沿革：現サイトの内容を確認後に追記）</p>
-            <p class="timeline__text">本社ビル竣工、許可取得、主要工事の完成など</p>
-          </div>
+      <div class="timeline">
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">昭和28年 11月</p>
+          <p class="timeline__text">東京電力（株）を退社し、高橋徳太郎 個人にて川崎市中原区に置いて営業を開始。</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="container">
-      <h2 class="cta__title">電気設備のことなら、お気軽にご相談ください</h2>
-      <div class="cta__actions">
-        <p class="cta__tel">044-755-6161<small>受付時間：要確認</small></p>
-        <a href="/contact/" class="btn-primary">お問い合わせフォーム</a>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">昭和32年 4月</p>
+          <p class="timeline__text">神奈川県庁及び川崎市役所指名業者に登録される。</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">昭和38年 7月</p>
+          <p class="timeline__text">資本金 2,200,000で住吉電機株式会社設立。<br>有限会社住吉電機商会休業。</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">昭和39年 6月</p>
+          <p class="timeline__text">東京電力（株）6KV昇圧工事業者に登録される。</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">昭和41年 4月</p>
+          <p class="timeline__text">日本住宅公団、東京都庁指名業者に登録される。</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">昭和44年 8月</p>
+          <p class="timeline__text">増資 1,200,000により資本金10,000,000となる。</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">昭和47年 4月</p>
+          <p class="timeline__text">住吉ビル完成。</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">昭和47年 6月</p>
+          <p class="timeline__text">増資 5,000,000により資本金 15,000,000となる。</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">昭和51年 4月</p>
+          <p class="timeline__text">現住所に本社ビルを設立して営業開始。</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">昭和62年 6月</p>
+          <p class="timeline__text">高橋 隆 代表取締役社長に就任。</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">平成 2年 4月</p>
+          <p class="timeline__text">増資 10,500,000により資本金 31,500,000となる。</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">平成27年 4月</p>
+          <p class="timeline__text">増資 20,000,000により資本金 51,500,000となる。</p>
+        </div>
+        <div class="timeline__item fade-in">
+          <p class="timeline__year">令和元年 8月</p>
+          <p class="timeline__text">高橋 賢次 代表取締役社長に就任。現在に至る。</p>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- ▼ footer（WP化時に footer.php へ切り出し） -->
+<!-- ▼ ここから footer.php 相当 -->
 <footer class="site-footer">
   <div class="container site-footer__inner">
     <div class="footer-company">
-      <p class="footer-company__name">住吉電機株式会社</p>
-      <p class="footer-company__en">Sumiyoshi Electric Co.,Ltd</p>
+      <div class="footer-company__logo">
+        <img src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/logo251106.svg" alt="" width="40" height="40">
+        <span class="footer-company__name">住吉電機株式会社</span>
+      </div>
       <address class="footer-company__address">
-        〒213-0024 神奈川県川崎市高津区明津14番地1<br>
-        TEL：044-755-6161
+        神奈川県川崎市高津区明津14番地1<br>
+        044-755-6161（代）
       </address>
     </div>
     <nav class="footer-nav">
       <ul>
-        <li><a href="/">ホーム</a></li>
-        <li><a href="/business/">事業内容</a></li>
-        <li><a href="/works/">施工実績</a></li>
+        <li><a href="/">トップページ</a></li>
+        <li><a href="/news/">News &amp; Topics</a></li>
+        <li><a href="/jisseki/">施工実績</a></li>
+        <li><a href="/recruit/">求人情報</a></li>
       </ul>
       <ul>
-        <li><a href="/news/">お知らせ</a></li>
+        <li><a href="/information/">会社案内</a></li>
+        <li><a href="/information/greeting/">代表挨拶</a></li>
         <li><a href="/information/company/">会社概要</a></li>
         <li><a href="/information/history/">沿革</a></li>
+        <li><a href="/information/access/">アクセス</a></li>
         <li><a href="/contact/">お問い合わせ</a></li>
       </ul>
     </nav>
   </div>
-  <p class="copyright">&copy; Sumiyoshi Electric Co.,Ltd All Rights Reserved.</p>
+  <div class="copyright">
+    <div class="container">
+      <span>Copyright © SUMIYOSHI ELECTRIC CO.,LTD All Rights Reserved.</span>
+      <span><a href="#">プライバシーポリシー</a></span><!-- TODO: 現サイトのプライバシーポリシーのリンク先確認 -->
+      <span>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</span>
+    </div>
+  </div>
 </footer>
-<!-- ▲ footer -->
+<button class="to-top" aria-label="ページ上部へ戻る">↑</button>
+<!-- ▲ ここまで footer.php 相当 -->
 
 <script src="/assets/js/main.js"></script>
 </body>
