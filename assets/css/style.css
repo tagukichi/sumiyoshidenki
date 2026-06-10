@@ -181,7 +181,6 @@ iframe { max-width: 100%; }
   margin: 5px auto;
   transition: transform 0.3s, opacity 0.3s, background 0.3s;
 }
-.nav-toggle[aria-expanded="true"] span { background: #fff; }
 .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -809,18 +808,22 @@ iframe { max-width: 100%; }
 }
 @media (max-width: 1040px) {
   .nav-toggle { display: block; }
+  /* メニューはヘッダーの下から表示（告知バー＋ヘッダーは見えたまま） */
   .global-nav {
     position: fixed;
-    inset: 0;
+    top: calc(var(--announce-height) + var(--header-height));
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(8, 29, 57, 0.97);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 24px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
     overflow-y: auto;
-    padding-block: 60px;
+    padding-block: 40px 60px;
   }
   .global-nav.is-open { opacity: 1; visibility: visible; }
   .global-nav__list { flex-direction: column; text-align: center; gap: 4px; }
