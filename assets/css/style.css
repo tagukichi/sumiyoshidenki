@@ -691,8 +691,157 @@ iframe { max-width: 100%; }
 .article__meta { display: flex; gap: 16px; align-items: center; margin-bottom: 28px; }
 .article__date { font-size: 0.9rem; color: var(--color-text-light); font-variant-numeric: tabular-nums; }
 .article__thumb { border-radius: 14px; margin-bottom: 32px; max-height: 560px; object-fit: contain; background: var(--color-bg-gray); width: 100%; }
-.article__body { font-size: 1rem; }
-.article__body p { margin-bottom: 1.4em; }
+/* ----------------------------------------------------------
+   記事本文タイポグラフィ（ブログ運用向け）
+   WPテーマ化時は the_content() の出力を
+   <div class="article__body entry-content"> で包めばそのまま適用される。
+   Gutenberg標準ブロック（見出し/リスト/引用/テーブル/画像）に対応。
+   ---------------------------------------------------------- */
+.article__body, .entry-content { font-size: 1rem; line-height: 2; }
+.article__body > :first-child, .entry-content > :first-child { margin-top: 0 !important; }
+.article__body p, .entry-content p { margin-bottom: 1.5em; }
+.article__body a, .entry-content a {
+  color: var(--color-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.article__body a:hover, .entry-content a:hover { color: var(--color-primary); }
+.article__body strong, .entry-content strong {
+  font-weight: 700;
+  background: linear-gradient(transparent 68%, rgba(242, 169, 0, 0.35) 68%);
+}
+
+/* H2：アンバーの縦バー＋薄グレー帯 */
+.article__body h2, .entry-content h2 {
+  margin: 2.6em 0 1em;
+  padding: 0.6em 0.9em;
+  background: var(--color-bg-gray);
+  border-left: 5px solid var(--color-accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.5;
+}
+
+/* H3：下ボーダー＋左端アンバーのアクセント */
+.article__body h3, .entry-content h3 {
+  position: relative;
+  margin: 2.2em 0 0.9em;
+  padding-bottom: 0.45em;
+  border-bottom: 2px solid var(--color-border);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.5;
+}
+.article__body h3::after, .entry-content h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 72px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+/* H4：小さなアンバーの角マーク */
+.article__body h4, .entry-content h4 {
+  position: relative;
+  margin: 1.9em 0 0.8em;
+  padding-left: 1em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.5;
+}
+.article__body h4::before, .entry-content h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.42em;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
+
+/* リスト */
+.article__body ul, .entry-content ul,
+.article__body ol, .entry-content ol {
+  margin: 0 0 1.5em;
+  padding-left: 1.5em;
+}
+.article__body ul, .entry-content ul { list-style: disc; }
+.article__body ol, .entry-content ol { list-style: decimal; }
+.article__body li, .entry-content li { margin-bottom: 0.4em; }
+.article__body li::marker, .entry-content li::marker {
+  color: var(--color-accent-dark);
+  font-weight: 700;
+}
+.article__body ul ul, .entry-content ul ul { list-style: circle; margin: 0.4em 0 0; }
+
+/* 引用 */
+.article__body blockquote, .entry-content blockquote {
+  margin: 0 0 1.5em;
+  padding: 1em 1.4em;
+  background: var(--color-bg-gray);
+  border-left: 4px solid var(--color-border);
+  border-radius: 0 8px 8px 0;
+  color: var(--color-text-light);
+}
+.article__body blockquote p:last-child, .entry-content blockquote p:last-child { margin-bottom: 0; }
+
+/* テーブル */
+.article__body table, .entry-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.5em;
+  font-size: 0.95rem;
+}
+.article__body th, .entry-content th,
+.article__body td, .entry-content td {
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+.article__body th, .entry-content th {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+}
+.article__body tr:nth-child(even) td, .entry-content tr:nth-child(even) td { background: var(--color-bg-gray); }
+
+/* 画像・区切り線 */
+.article__body img, .entry-content img {
+  border-radius: 12px;
+  margin: 0 auto 1.5em;
+}
+.article__body figure, .entry-content figure { margin: 0 0 1.5em; }
+.article__body figure img, .entry-content figure img { margin-bottom: 0.5em; }
+.article__body figcaption, .entry-content figcaption {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  text-align: center;
+}
+.article__body hr, .entry-content hr {
+  border: none;
+  border-top: 1px dashed var(--color-border);
+  margin: 2.5em 0;
+}
+
+/* WP標準の配置クラス（テーマ化時にそのまま有効） */
+.article__body .aligncenter, .entry-content .aligncenter { margin-inline: auto; display: block; }
+.article__body .alignleft, .entry-content .alignleft { float: left; margin: 0 1.5em 1em 0; }
+.article__body .alignright, .entry-content .alignright { float: right; margin: 0 0 1em 1.5em; }
+@media (max-width: 600px) {
+  .article__body .alignleft, .entry-content .alignleft,
+  .article__body .alignright, .entry-content .alignright {
+    float: none;
+    margin: 0 auto 1.5em;
+  }
+}
 .article__back { margin-top: 48px; text-align: center; }
 
 .map-embed {

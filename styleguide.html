@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ記事 装飾サンプル – 住吉電機株式会社</title>
+<meta name="description" content="ブログ記事の見出し・装飾デザイン確認用サンプルページ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<!-- ▼ ここから header.php 相当 -->
+<div class="announce-bar">
+  <a href="./recruit/">一緒に働ける仲間を住吉電機株式会社では募集しております。</a>
+</div>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="./" class="site-logo">
+      <img src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/logo251106.svg" alt="住吉電機株式会社">
+    </a>
+    <nav class="global-nav" id="global-nav">
+      <ul class="global-nav__list">
+        <li><a href="./">トップページ</a></li>
+        <li><a href="./news/">News &amp; Topics</a></li>
+        <li class="has-dropdown">
+          <a href="./information/">会社案内</a>
+          <ul class="dropdown">
+            <li><a href="./information/greeting/">代表挨拶</a></li>
+            <li><a href="./information/company/">会社概要</a></li>
+            <li><a href="./information/history/">沿　革</a></li>
+            <li><a href="./information/access/">アクセス</a></li>
+          </ul>
+        </li>
+        <li><a href="./jisseki/">施工実績</a></li>
+        <li><a href="./recruit/">求人情報</a></li>
+        <li><a href="./contact/">お問い合わせ</a></li>
+      </ul>
+      <a class="btn-recruit" href="./recruit/">求人情報</a>
+    </nav>
+    <div class="header-contact">
+      <p class="header-tel">
+        <span class="header-tel__number">044-755-6161（代）</span>
+        <span class="header-tel__note">お電話でのお問い合わせ</span>
+      </p>
+      <a class="btn-recruit" href="./recruit/">求人情報</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- ▲ ここまで header.php 相当 -->
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <p class="page-header__label">Style Guide</p>
+      <h1 class="page-header__title">ブログ記事 装飾サンプル</h1>
+    </div>
+  </div>
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <div class="container">
+      <ol>
+        <li><a href="./">ホーム</a></li>
+        <li>装飾サンプル</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <article class="article">
+        <div class="article__meta">
+          <time class="article__date" datetime="2026-06-10">2026/06/10</time>
+        </div>
+        <div class="article__body">
+          <p>このページはブログ運用時の見出し・装飾デザインの確認用サンプルです（本番公開時には削除します）。記事の書き出しの段落はこのように表示されます。テキストの行間や文字サイズは読みやすさを重視しています。<strong>強調したいテキスト</strong>にはマーカー風の下線が付きます。<a href="#">テキストリンク</a>はこのような表示です。</p>
+
+          <h2>見出し2（H2）の表示サンプル</h2>
+          <p>H2はアンバーの縦バーと薄いグレー帯付きの、記事の大きな区切りに使う見出しです。WordPress化後はエディタで「見出し2」を選ぶだけでこのデザインになります。</p>
+
+          <h3>見出し3（H3）の表示サンプル</h3>
+          <p>H3は下線と左端のアンバーアクセント付き。H2のセクション内の小見出しに使います。</p>
+
+          <h4>見出し4（H4）の表示サンプル</h4>
+          <p>H4は小さなアンバーの角マーク付き。補足的な見出しに使います。</p>
+
+          <h2>リスト・引用・表のサンプル</h2>
+
+          <h3>箇条書きリスト</h3>
+          <ul>
+            <li>電気配線工事</li>
+            <li>計装工事</li>
+            <li>消防施設工事
+              <ul>
+                <li>自動火災報知設備</li>
+                <li>誘導灯設備</li>
+              </ul>
+            </li>
+            <li>電気通信工事</li>
+          </ul>
+
+          <h3>番号付きリスト</h3>
+          <ol>
+            <li>お問い合わせ・ご相談</li>
+            <li>現地調査・お見積り</li>
+            <li>ご契約・施工</li>
+            <li>完成・お引き渡し</li>
+          </ol>
+
+          <h3>引用</h3>
+          <blockquote>
+            <p>引用文はこのように表示されます。参考にした資料や規格からの引用などに使用します。</p>
+          </blockquote>
+
+          <h3>表（テーブル）</h3>
+          <table>
+            <tr><th>項目</th><th>内容</th></tr>
+            <tr><td>工事名</td><td>○○施設 電気設備工事</td></tr>
+            <tr><td>施工時期</td><td>令和○年○月</td></tr>
+            <tr><td>工事内容</td><td>受変電設備の更新、照明設備のLED化</td></tr>
+          </table>
+
+          <h3>画像</h3>
+          <figure>
+            <img src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/05/20230608_060811683_iOS-768x576-1.jpg" alt="施工写真サンプル">
+            <figcaption>キャプション：川崎市新本庁舎 太陽光発電設備</figcaption>
+          </figure>
+
+          <hr>
+          <p>区切り線（hr）の下のテキスト。記事の締めの段落はこのようになります。</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- ▼ ここから footer.php 相当 -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="footer-company">
+      <div class="footer-company__logo">
+        <img src="https://www.sumiyoshidennki.com/wp-content/uploads/2025/03/logo251106.svg" alt="" width="40" height="40">
+        <span class="footer-company__name">住吉電機株式会社</span>
+      </div>
+      <address class="footer-company__address">
+        神奈川県川崎市高津区明津14番地1<br>
+        044-755-6161（代）
+      </address>
+    </div>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="./">トップページ</a></li>
+        <li><a href="./news/">News &amp; Topics</a></li>
+        <li><a href="./jisseki/">施工実績</a></li>
+        <li><a href="./recruit/">求人情報</a></li>
+      </ul>
+      <ul>
+        <li><a href="./information/">会社案内</a></li>
+        <li><a href="./information/greeting/">代表挨拶</a></li>
+        <li><a href="./information/company/">会社概要</a></li>
+        <li><a href="./information/history/">沿革</a></li>
+        <li><a href="./information/access/">アクセス</a></li>
+        <li><a href="./contact/">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="copyright">
+    <div class="container">
+      <span>Copyright © SUMIYOSHI ELECTRIC CO.,LTD All Rights Reserved.</span>
+      <span><a href="#">プライバシーポリシー</a></span><!-- TODO: 現サイトのプライバシーポリシーのリンク先確認 -->
+      <span>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</span>
+    </div>
+  </div>
+</footer>
+<button class="to-top" aria-label="ページ上部へ戻る">↑</button>
+<!-- ▲ ここまで footer.php 相当 -->
+
+<script src="./assets/js/main.js"></script>
+</body>
+</html>
