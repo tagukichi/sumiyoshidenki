@@ -120,12 +120,12 @@ STATS = [
     ("賞与支給日", f"{UP}/2025/06/Group-3746.svg", "2", "回"),
 ]
 
-# 会社案内 4カード（現サイトと同じ画像・リンク）
+# 会社案内 4項目（現サイトと同じ画像・リンク）
 INFO_CARDS = [
-    ("代表挨拶", "/information/greeting/", f"{UP}/2025/05/image-9.png"),
-    ("会社概要", "/information/company/", f"{UP}/2025/06/Frame-8.png"),
-    ("沿革", "/information/history/", f"{UP}/2025/06/56b7b0de4be422688604b363ad508afd-3.png"),
-    ("アクセス", "/information/access/", f"{UP}/2025/05/image-8.png"),
+    ("代表挨拶", "Greeting", "/information/greeting/", f"{UP}/2025/05/image-9.png"),
+    ("会社概要", "Company", "/information/company/", f"{UP}/2025/06/Frame-8.png"),
+    ("沿革", "History", "/information/history/", f"{UP}/2025/06/56b7b0de4be422688604b363ad508afd-3.png"),
+    ("アクセス", "Access", "/information/access/", f"{UP}/2025/05/image-8.png"),
 ]
 
 ESC = html.escape
@@ -160,11 +160,7 @@ def layout(*, title, description, body, active="", is_top=False):
 <header class="site-header">
   <div class="site-header__inner">
     <a href="/" class="site-logo">
-      <img src="{LOGO}" alt="住吉電機株式会社 ロゴ" width="44" height="44">
-      <span class="site-logo__text">
-        <span class="site-logo__name">住吉電機株式会社</span>
-        <span class="site-logo__en">Sumiyoshi Electric Co.,Ltd</span>
-      </span>
+      <img src="{LOGO}" alt="住吉電機株式会社">
     </a>
     <nav class="global-nav" id="global-nav">
       <ul class="global-nav__list">
@@ -306,7 +302,7 @@ def work_cards_html(works, limit=None):
 
 def info_cards_html():
     out = []
-    for title, url, img in INFO_CARDS:
+    for title, _en, url, img in INFO_CARDS:
         out.append(f"""        <a class="info-card fade-in" href="{url}">
           <img class="info-card__img" src="{img}" alt="{ESC(title)}" loading="lazy">
           <div class="info-card__body">
@@ -314,6 +310,20 @@ def info_cards_html():
             <span class="info-card__arrow">→</span>
           </div>
         </a>""")
+    return "\n".join(out)
+
+def info_index_html():
+    """TOPページ用：番号付きインデックスリスト"""
+    out = []
+    for i, (title, en, url, img) in enumerate(INFO_CARDS, 1):
+        out.append(f"""          <li class="fade-in">
+            <a class="info-index__link" href="{url}">
+              <span class="info-index__num">{i:02d}</span>
+              <img class="info-index__thumb" src="{img}" alt="" loading="lazy">
+              <span class="info-index__title">{ESC(title)}<small>{ESC(en)}</small></span>
+              <span class="info-index__arrow">→</span>
+            </a>
+          </li>""")
     return "\n".join(out)
 
 W = {}  # path -> html
@@ -357,12 +367,15 @@ top_body = f"""  <!-- メインビジュアル（現サイトのキャッチコ�
   <!-- 会社案内 -->
   <section class="section section--gray">
     <div class="container">
-      <div class="section__head section__head--center fade-in">
-        <span class="section__label">Information</span>
-        <h2 class="section__title">会社案内</h2>
-      </div>
-      <div class="info-cards">
-{info_cards_html()}
+      <div class="info-index">
+        <div class="info-index__head fade-in">
+          <span class="section__label">Information</span>
+          <h2 class="section__title">会社案内</h2>
+          <p class="info-index__lead">昭和28年の創業以来、川崎の地で電気工事を営んでまいりました。住吉電機株式会社についてご紹介します。</p>
+        </div>
+        <ul class="info-index__list">
+{info_index_html()}
+        </ul>
       </div>
     </div>
   </section>

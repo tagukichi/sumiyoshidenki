@@ -92,11 +92,8 @@ iframe { max-width: 100%; }
   justify-content: space-between;
   gap: 16px;
 }
-.site-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.site-logo img { height: 44px; width: auto; }
-.site-logo__text { display: flex; flex-direction: column; line-height: 1.25; }
-.site-logo__name { font-size: 1.2rem; font-weight: 700; color: #333; }
-.site-logo__en { font-size: 0.58rem; color: var(--color-text-light); letter-spacing: 0.14em; text-transform: uppercase; }
+.site-logo { display: flex; align-items: center; flex-shrink: 0; }
+.site-logo img { height: 46px; width: auto; }
 
 .global-nav { display: flex; align-items: center; gap: 8px; }
 .global-nav__list { display: flex; align-items: center; gap: 0; }
@@ -165,6 +162,8 @@ iframe { max-width: 100%; }
   white-space: nowrap;
 }
 .btn-recruit:hover { background: var(--color-accent-dark); transform: translateY(-1px); }
+/* ナビ内の求人情報ボタンはモバイルメニュー専用（デスクトップは右端の1つのみ） */
+.global-nav > .btn-recruit { display: none; }
 
 /* --- Mobile nav toggle --- */
 .nav-toggle {
@@ -221,20 +220,23 @@ iframe { max-width: 100%; }
   position: absolute;
   z-index: 2;
   top: 50%;
-  right: clamp(24px, 8vw, 120px);
+  right: clamp(24px, 7vw, 110px);
   translate: 0 -50%;
   writing-mode: vertical-rl;
   color: #fff;
-  font-size: clamp(1.15rem, 2.6vw, 1.7rem);
+  font-size: clamp(1.05rem, 2.2vw, 1.5rem);
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 1;
   letter-spacing: 0.22em;
   text-shadow: 0 2px 18px rgba(8, 29, 57, 0.8);
-  display: flex;
-  gap: 1.1em;
-  height: min(76%, 480px);
 }
-.hero__catch span { display: block; }
+/* 1フレーズ=1行。折り返し禁止で行ごとに段差をつける */
+.hero__catch span { display: block; white-space: nowrap; margin-left: 1.1em; }
+.hero__catch span:last-child { margin-left: 0; }
+.hero__catch span:nth-child(2) { padding-top: 0.9em; }
+.hero__catch span:nth-child(3) { padding-top: 1.8em; }
+.hero__catch span:nth-child(4) { padding-top: 2.7em; }
+.hero__catch span:nth-child(5) { padding-top: 3.6em; }
 .hero__dots {
   position: absolute;
   z-index: 3;
@@ -380,6 +382,66 @@ iframe { max-width: 100%; }
   transition: transform 0.3s;
 }
 .info-card:hover .info-card__arrow { transform: translateX(4px); }
+
+/* ==========================================================
+   会社案内インデックス（トップページ）
+   ========================================================== */
+.info-index { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
+.info-index__lead { margin-top: 18px; color: var(--color-text-light); font-size: 0.94rem; }
+.info-index__list { border-top: 1px solid #c9d2da; }
+.info-index__list li { border-bottom: 1px solid #c9d2da; }
+.info-index__link {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 12px;
+  transition: background 0.25s, padding-left 0.25s;
+}
+.info-index__link:hover { background: #fff; padding-left: 20px; }
+.info-index__num {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  letter-spacing: 0.1em;
+  font-variant-numeric: tabular-nums;
+}
+.info-index__thumb {
+  width: 96px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.info-index__title {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.4;
+}
+.info-index__title small {
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.info-index__arrow {
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.info-index__link:hover .info-index__arrow { transform: translateX(5px); }
 
 /* ==========================================================
    施工実績カード
@@ -780,10 +842,11 @@ iframe { max-width: 100%; }
   }
   .dropdown a { color: rgba(255,255,255,0.75); font-size: 0.92rem; padding: 8px; text-align: center; }
   .dropdown a:hover { background: rgba(255,255,255,0.1); color: var(--color-accent); }
-  .global-nav .btn-recruit { margin-inline: auto; }
+  .global-nav > .btn-recruit { display: inline-block; margin-inline: auto; }
   .header-contact .btn-recruit { display: none; }
 
   .info-cards { grid-template-columns: repeat(2, 1fr); }
+  .info-index { grid-template-columns: 1fr; gap: 32px; }
   .works-grid, .works-grid--top { grid-template-columns: repeat(2, 1fr); }
   .interviews { grid-template-columns: 1fr; }
 }
@@ -803,6 +866,5 @@ iframe { max-width: 100%; }
 @media (max-width: 480px) {
   .info-cards { grid-template-columns: 1fr; }
   .works-grid, .works-grid--top { grid-template-columns: 1fr; }
-  .site-logo__name { font-size: 1rem; }
-  .site-logo img { height: 36px; }
+  .site-logo img { height: 38px; }
 }
