@@ -911,15 +911,16 @@ iframe { max-width: 100%; }
    ========================================================== */
 .site-footer { background: #3b4045; color: rgba(255,255,255,0.85); padding: 64px 0 0; }
 .site-footer__inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; padding-bottom: 48px; }
-.footer-company { display: flex; flex-direction: column; gap: 4px; }
-.footer-company__logo img {
-  height: 48px;
-  width: auto;
-  max-width: 100%;
-  /* 濃色フッター上で社名入りロゴを読めるよう白く反転 */
-  filter: brightness(0) invert(1);
+.footer-company { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+/* 濃色フッター上でも実ロゴの黄色い雷マーク・社名をそのまま見せるため白い台座に乗せる */
+.footer-company__logo {
+  display: inline-block;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 18px;
 }
-.footer-company__address { margin-top: 16px; font-size: 0.9rem; font-style: normal; line-height: 1.9; }
+.footer-company__logo img { height: 44px; width: auto; max-width: 100%; display: block; }
+.footer-company__address { margin-top: 18px; font-size: 0.9rem; font-style: normal; line-height: 1.9; }
 .footer-nav { display: flex; gap: 48px; justify-content: flex-end; flex-wrap: wrap; }
 .footer-nav ul { display: flex; flex-direction: column; gap: 10px; }
 .footer-nav a { font-size: 0.88rem; transition: color 0.2s; }
