@@ -204,8 +204,7 @@ def layout(*, title, description, body, active="", is_top=False):
   <div class="container site-footer__inner">
     <div class="footer-company">
       <div class="footer-company__logo">
-        <img src="{LOGO}" alt="" width="40" height="40">
-        <span class="footer-company__name">住吉電機株式会社</span>
+        <img src="{LOGO}" alt="住吉電機株式会社">
       </div>
       <address class="footer-company__address">
         神奈川県川崎市高津区明津14番地1<br>
