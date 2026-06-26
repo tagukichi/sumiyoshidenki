@@ -971,18 +971,19 @@ iframe { max-width: 100%; }
     left: 0;
     right: 0;
     bottom: 20vh;
-    background: rgba(8, 29, 57, 0.97);
+    background: #0a2143;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 24px;
+    justify-content: center;
+    gap: 14px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
     overflow-y: auto;
-    padding-block: 40px 48px;
+    padding-block: 20px 24px;
     box-shadow: 0 12px 32px rgba(8, 29, 57, 0.35);
   }
-  /* 残り20vhはブラーの背景オーバーレイ（タップでメニューを閉じる） */
+  /* 残り20vhはブラーの背景オーバーレイ（タップでメニューを閉じる）
+     下のページが判別できないよう、強めのブラー＋紺のフロストで覆う */
   .global-nav::after {
     content: "";
     position: fixed;
@@ -990,13 +991,14 @@ iframe { max-width: 100%; }
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(8, 29, 57, 0.25);
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
+    /* パネルと同じ紺から徐々に薄くして継ぎ目をなくしつつ、下のページを隠す */
+    background: linear-gradient(rgba(10, 33, 67, 0.98), rgba(10, 33, 67, 0.82));
+    -webkit-backdrop-filter: blur(24px) saturate(120%);
+    backdrop-filter: blur(24px) saturate(120%);
   }
   .global-nav.is-open { opacity: 1; visibility: visible; }
-  .global-nav__list { flex-direction: column; text-align: center; gap: 4px; }
-  .global-nav__list > li > a { color: #fff; font-size: 1.05rem; padding: 10px 20px; }
+  .global-nav__list { flex-direction: column; text-align: center; gap: 2px; }
+  .global-nav__list > li > a { color: #fff; font-size: 1.02rem; padding: 7px 20px; }
   .global-nav__list > li > a:hover,
   .global-nav__list > li > a[aria-current="page"] { background: rgba(255,255,255,0.1); color: var(--color-accent); }
   .has-dropdown > a::after { display: none; }
@@ -1012,9 +1014,9 @@ iframe { max-width: 100%; }
     padding: 0;
     min-width: 0;
   }
-  .dropdown a { color: rgba(255,255,255,0.75); font-size: 0.92rem; padding: 8px; text-align: center; }
+  .dropdown a { color: rgba(255,255,255,0.75); font-size: 0.9rem; padding: 5px; text-align: center; }
   .dropdown a:hover { background: rgba(255,255,255,0.1); color: var(--color-accent); }
-  .global-nav > .btn-recruit { display: inline-block; margin-inline: auto; }
+  .global-nav > .btn-recruit { display: inline-block; margin-inline: auto; margin-top: 4px; }
   .header-contact .btn-recruit { display: none; }
 
   .info-cards { grid-template-columns: repeat(2, 1fr); }
@@ -1046,4 +1048,11 @@ iframe { max-width: 100%; }
   .info-index__title { font-size: 1rem; }
   .info-index__arrow { width: 26px; height: 26px; }
   .footer-company__logo img { height: 42px; }
+}
+/* 背の低い端末（iPhone SE等）：メニュー項目がブラー領域に被らないよう、
+   ブラー帯を縮めてメニュー領域を広げ、間隔をさらに詰める */
+@media (max-width: 1040px) and (max-height: 740px) {
+  .global-nav { bottom: 12vh; gap: 8px; padding-block: 12px 16px; }
+  .global-nav__list > li > a { padding: 5px 20px; font-size: 0.98rem; }
+  .global-nav::after { top: 88vh; }
 }
