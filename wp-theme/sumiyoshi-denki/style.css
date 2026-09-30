@@ -1,0 +1,17 @@
+/*
+Theme Name: 住吉電機株式会社
+Theme URI: https://www.sumiyoshidennki.com/
+Description: 住吉電機株式会社 コーポレートサイト用オリジナルテーマ。News & Topics・施工実績（カスタム投稿）、ブログ記事の装飾、Contact Form 7 のフォーム表示に対応。
+Author: 住吉電機株式会社
+Version: 1.0.0
+Requires at least: 6.2
+Requires PHP: 7.4
+Text Domain: sumiyoshi-denki
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/*
+ * スタイル本体は assets/css/style.css にあります（functions.php で読み込み）。
+ * このファイルはテーマ情報の定義専用です。
+ */
