@@ -18,13 +18,21 @@ sumiyoshi_page_heading( 'Access', get_the_title() );
 					<tr><th>電話</th><td><a href="<?php echo esc_url( sumiyoshi_tel_href() ); ?>"><?php echo esc_html( SUMIYOSHI_TEL ); ?>（代）</a></td></tr>
 				</tbody>
 			</table>
-			<iframe class="map-embed map-embed--street"
-				src="https://www.google.com/maps/embed?pb=!4v1743146114250!6m8!1m7!1sKf5jSiNYm6P3JBHiGM0gDw!2m2!1d35.56946006058778!2d139.6358572797338!3f35.39!4f52.41999999999999!5f1.009049021386966"
-				allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-				title="住吉電機株式会社 ストリートビュー"></iframe>
-			<iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-				src="https://maps.google.com/maps?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E5%B7%9D%E5%B4%8E%E5%B8%82%E9%AB%98%E6%B4%A5%E5%8C%BA%E6%98%8E%E6%B4%A514-1&amp;output=embed"
-				title="住吉電機株式会社 所在地"></iframe>
+			<?php
+			// 地図・ストリートビューは 外観 > カスタマイズ > サイト設定（住吉電機） で変更できます
+			$sumiyoshi_map    = sumiyoshi_map_src();
+			$sumiyoshi_street = sumiyoshi_streetview_src();
+			?>
+			<?php if ( $sumiyoshi_map ) : ?>
+				<iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+					src="<?php echo esc_url( $sumiyoshi_map ); ?>"
+					title="住吉電機株式会社 地図"></iframe>
+			<?php endif; ?>
+			<?php if ( $sumiyoshi_street ) : ?>
+				<iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+					src="<?php echo esc_url( $sumiyoshi_street ); ?>"
+					title="住吉電機株式会社 ストリートビュー"></iframe>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>

@@ -21,6 +21,9 @@ UP = "https://www.sumiyoshidennki.com/wp-content/uploads"
 
 LOGO = f"{UP}/2025/03/logo251106.svg"
 
+# 地図（Googleマップ「住吉電機（株）」のピン位置。テーマでは管理画面から変更可能）
+MAP_SRC = "https://maps.google.com/maps?q=35.569508,139.635995&amp;z=17&amp;hl=ja&amp;output=embed"
+
 # ----------------------------------------------------------
 # データ：News & Topics（WPエクスポートの news 投稿 全14件）
 # ----------------------------------------------------------
@@ -330,13 +333,11 @@ W = {}  # path -> html
 # ----------------------------------------------------------
 # トップページ
 # ----------------------------------------------------------
-hero_slides = [f"{UP}/2025/03/Group-3744.png", f"{UP}/2025/03/Group-3764-1.png"]
-slides_html = "\n".join(
-    f'    <div class="hero__slide" style="background-image:url(\'{u}\')"></div>' for u in hero_slides
-)
+# メインビジュアルは1枚（現行サイトの2枚は同じ画像のため）。スマホでは写真の右側（人物）を表示
+hero_image = f"{UP}/2025/03/Group-3744.png"
 top_body = f"""  <!-- メインビジュアル（現サイトのキャッチコピーを縦書きで継承） -->
-  <section class="hero">
-{slides_html}
+  <section class="hero" style="--hero-pos-pc: 50%; --hero-pos-sp: 100%;">
+    <div class="hero__slide is-active" style="background-image:url('{hero_image}')"></div>
     <p class="hero__catch">
       <span>川崎市で電気工事を</span>
       <span>営んで半世紀以上。</span>
@@ -344,7 +345,6 @@ top_body = f"""  <!-- メインビジュアル（現サイトのキャッチコ�
       <span>その間に培った</span>
       <span>お客様に安心をお届けします。</span>
     </p>
-    <div class="hero__dots" role="tablist" aria-label="スライド切り替え"></div>
   </section>
 
   <!-- News & Topics -->
@@ -639,13 +639,12 @@ access_body = f"""{page_header("Access", "アクセス")}
             <tr><th>電話</th><td>044-755-6161（代）</td></tr>
           </tbody>
         </table>
-        <iframe class="map-embed" style="margin-bottom:32px"
+        <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+          src="{MAP_SRC}"
+          title="住吉電機株式会社 地図"></iframe>
+        <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
           src="https://www.google.com/maps/embed?pb=!4v1743146114250!6m8!1m7!1sKf5jSiNYm6P3JBHiGM0gDw!2m2!1d35.56946006058778!2d139.6358572797338!3f35.39!4f52.41999999999999!5f1.009049021386966"
-          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           title="住吉電機株式会社 ストリートビュー"></iframe>
-        <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://maps.google.com/maps?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E5%B7%9D%E5%B4%8E%E5%B8%82%E9%AB%98%E6%B4%A5%E5%8C%BA%E6%98%8E%E6%B4%A514-1&output=embed"
-          title="住吉電機株式会社 所在地"></iframe>
       </div>
     </div>
   </section>"""
@@ -749,7 +748,7 @@ recruit_body = f"""{page_header("Recruit", "求人情報")}
         </tbody>
       </table>
       <iframe class="map-embed" style="margin-top:32px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        src="https://maps.google.com/maps?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E5%B7%9D%E5%B4%8E%E5%B8%82%E9%AB%98%E6%B4%A5%E5%8C%BA%E6%98%8E%E6%B4%A514-1&output=embed"
+        src="{MAP_SRC}"
         title="勤務地・面接地 地図"></iframe>
     </div>
   </section>

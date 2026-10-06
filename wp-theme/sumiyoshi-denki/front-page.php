@@ -8,16 +8,10 @@
 get_header();
 
 /**
- * メインビジュアルのスライド画像（メディアライブラリ内のパス）
- * 差し替える場合はこの配列を編集するか、sumiyoshi_hero_slides フィルターで変更してください。
+ * メインビジュアルの画像は 外観 > カスタマイズ > サイト設定（住吉電機） で変更できます。
+ * （既定は現行サイトの1枚。2枚以上設定するとスライドショー）
  */
-$sumiyoshi_slides = apply_filters(
-	'sumiyoshi_hero_slides',
-	array(
-		sumiyoshi_upload_url( '2025/03/Group-3744.png' ),
-		sumiyoshi_upload_url( '2025/03/Group-3764-1.png' ),
-	)
-);
+$sumiyoshi_slides = sumiyoshi_hero_slides();
 
 $sumiyoshi_news = new WP_Query(
 	array(
@@ -37,9 +31,9 @@ $sumiyoshi_works = new WP_Query(
 );
 ?>
 
-<section class="hero">
-	<?php foreach ( $sumiyoshi_slides as $sumiyoshi_slide ) : ?>
-		<div class="hero__slide" style="background-image:url('<?php echo esc_url( $sumiyoshi_slide ); ?>')"></div>
+<section class="hero" style="--hero-pos-pc: <?php echo esc_attr( sumiyoshi_hero_position( 'pc' ) ); ?>; --hero-pos-sp: <?php echo esc_attr( sumiyoshi_hero_position( 'sp' ) ); ?>;">
+	<?php foreach ( $sumiyoshi_slides as $sumiyoshi_i => $sumiyoshi_slide ) : ?>
+		<div class="hero__slide<?php echo 0 === $sumiyoshi_i ? ' is-active' : ''; ?>" style="background-image:url('<?php echo esc_url( $sumiyoshi_slide ); ?>')"></div>
 	<?php endforeach; ?>
 	<p class="hero__catch">
 		<span>川崎市で電気工事を</span>
@@ -48,7 +42,9 @@ $sumiyoshi_works = new WP_Query(
 		<span>その間に培った</span>
 		<span>お客様に安心をお届けします。</span>
 	</p>
-	<div class="hero__dots" role="tablist" aria-label="スライド切り替え"></div>
+	<?php if ( count( $sumiyoshi_slides ) > 1 ) : ?>
+		<div class="hero__dots" role="tablist" aria-label="スライド切り替え"></div>
+	<?php endif; ?>
 </section>
 
 <!-- News & Topics -->

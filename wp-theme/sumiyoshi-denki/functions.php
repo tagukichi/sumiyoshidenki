@@ -29,6 +29,7 @@ require get_template_directory() . '/inc/post-types.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/navigation.php';
 require get_template_directory() . '/inc/shortcodes.php';
+require get_template_directory() . '/inc/customizer.php';
 
 /**
  * テーマの基本設定

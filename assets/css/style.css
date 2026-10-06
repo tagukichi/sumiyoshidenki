@@ -196,31 +196,29 @@ iframe { max-width: 100%; }
   overflow: hidden;
   background: var(--color-primary-dark);
 }
+/* 写真の横位置は --hero-pos-pc / --hero-pos-sp で指定（テーマでは管理画面から設定） */
 .hero__slide {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  /* 縦は上寄り（30%）で切り取り、人物の頭が切れないようにする */
+  background-position: var(--hero-pos-pc, 50%) 30%;
   opacity: 0;
   transition: opacity 1.4s ease;
-  transform: scale(1.06);
 }
-.hero__slide.is-active {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 1.4s ease, transform 7s linear;
-}
+.hero__slide.is-active { opacity: 1; }
+/* キャッチコピーのある左側だけ暗くし、右側の人物はそのまま見せる */
 .hero__slide::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg, rgba(8, 29, 57, 0.55), rgba(8, 29, 57, 0.1) 55%, rgba(8, 29, 57, 0.35));
+  background: linear-gradient(90deg, rgba(8, 29, 57, 0.62) 0%, rgba(8, 29, 57, 0.35) 38%, rgba(8, 29, 57, 0) 68%);
 }
 .hero__catch {
   position: absolute;
   z-index: 2;
   top: 50%;
-  right: clamp(24px, 7vw, 110px);
+  left: clamp(24px, 9vw, 160px);
   translate: 0 -50%;
   writing-mode: vertical-rl;
   color: #fff;
@@ -1039,6 +1037,10 @@ iframe { max-width: 100%; }
   .recruit-table th { width: auto; display: block; border-bottom: none; padding-bottom: 4px; }
   .recruit-table td { display: block; padding-top: 4px; }
   .hero { height: min(560px, 72vh); }
+  /* スマホは縦長で写真の一部しか入らないため、人物のいる側（既定: 右端）を表示 */
+  .hero__slide { background-position: var(--hero-pos-sp, 100%) 30%; }
+  .hero__slide::after { background: linear-gradient(90deg, rgba(8, 29, 57, 0.6) 0%, rgba(8, 29, 57, 0.3) 45%, rgba(8, 29, 57, 0.05) 75%); }
+  .hero__catch { left: 20px; font-size: 1.05rem; }
 }
 @media (max-width: 480px) {
   .info-cards { grid-template-columns: 1fr; }
@@ -1187,7 +1189,7 @@ a.news-list__cat:hover { background: var(--color-blue); color: #fff; }
 /* --- 静的版ではインラインで指定していた余白 --- */
 .recruit-tags { margin-top: 20px; }
 .access-table { margin-bottom: 40px; }
-.map-embed--street { margin-bottom: 32px; }
+.map-embed + .map-embed { margin-top: 32px; }
 .recruit-map { margin-top: 32px; }
 .apply-actions--form { margin-bottom: 0; }
 

@@ -28,6 +28,18 @@ tools/build_theme.py    テーマへ assets を同期・エディタ用CSS生成
 4. **固定ページ「お問い合わせ」を「公開」に変更**（現行サイトでは非公開のため、訪問者には表示されません。ヘッダー・フッターからリンクしています）
 5. 表示が崩れる・404 になる場合は **設定 > パーマリンク** を開いて「変更を保存」を1回押す
 
+### テーマの設定（外観 > カスタマイズ > サイト設定（住吉電機））
+
+| 項目 | 内容 | 既定 |
+|---|---|---|
+| トップページの画像 | メディアから選択。2枚目・3枚目も設定すると6秒ごとのスライドショーになる | 現行サイトの1枚目（`Group-3744.png`）1枚 |
+| 画像の表示位置（PC / スマホ） | 画面に収まらない部分は切り取られるため、見せたい側（左端〜右端）を選ぶ | PC：中央 / スマホ：右端（人物側） |
+| Googleマップ | Googleマップの共有URL（`maps.app.goo.gl` の短縮URLも可）、または「地図を埋め込む」のHTMLを貼り付け。アクセス・求人ページで共通 | 住吉電機（株）のピン位置 |
+| ストリートビュー | アクセスページに表示。空欄にすると非表示 | 現行サイトと同じストリートビュー |
+
+共有URLを貼った場合は、URL内のピンの座標で地図を表示します。会社名入りの情報カードを表示したい場合は、
+Googleマップの「共有 → 地図を埋め込む」で表示されるHTMLを貼り付けてください。
+
 ### プラグインとの関係
 
 | プラグイン | 扱い |
@@ -43,14 +55,14 @@ tools/build_theme.py    テーマへ assets を同期・エディタ用CSS生成
 
 | URL | テンプレート | 内容の編集方法 |
 |---|---|---|
-| `/` | `front-page.php` | お知らせ6件・施工実績4件は投稿から自動表示。スライダー画像は同ファイル先頭の配列 |
+| `/` | `front-page.php` | お知らせ6件・施工実績4件は投稿から自動表示。トップ画像はカスタマイズで設定 |
 | `/news/`・`/news/記事/` | `archive.php`・`single.php` | 管理画面「News & Topics」で投稿 |
 | `/jisseki/`・`/jisseki/記事/` | `archive-jisseki.php`・`single-jisseki.php` | 管理画面「施工実績」で投稿。タイトルは `工事名<br>令和◯年◯月` の形式（一覧で工事名と時期が分かれて表示） |
 | `/information/` | `page-information.php` | — |
 | `/information/greeting/` | `page-greeting.php` | テンプレート内の本文を編集 |
 | `/information/company/` | `page-company.php` | ファイル先頭の `$sumiyoshi_rows`（表の項目）を編集 |
 | `/information/history/` | `page-history.php` | ファイル先頭の `$sumiyoshi_history` に1行追加 |
-| `/information/access/` | `page-access.php` | — |
+| `/information/access/` | `page-access.php` | 地図・ストリートビューはカスタマイズで設定 |
 | `/recruit/` | `page-recruit.php` | 募集要項・社員インタビューはテンプレート内。勤続年数は ACF の入社日から自動計算 |
 | `/contact/` | `page-contact.php` | フォーム項目は Contact Form 7 側で編集 |
 | その他の固定ページ | `page.php` | エディタで書いた内容をそのまま表示 |

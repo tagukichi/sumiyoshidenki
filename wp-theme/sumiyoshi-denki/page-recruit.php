@@ -110,9 +110,11 @@ $sumiyoshi_interviews = array(
 				<tr><th>勤務地・面接地</th><td>神奈川県川崎市高津区明津14番地1（住吉電機株式会社 本社ビル）</td></tr>
 			</tbody>
 		</table>
-		<iframe class="map-embed recruit-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-			src="https://maps.google.com/maps?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E5%B7%9D%E5%B4%8E%E5%B8%82%E9%AB%98%E6%B4%A5%E5%8C%BA%E6%98%8E%E6%B4%A514-1&amp;output=embed"
-			title="勤務地・面接地 地図"></iframe>
+		<?php if ( sumiyoshi_map_src() ) : ?>
+			<iframe class="map-embed recruit-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+				src="<?php echo esc_url( sumiyoshi_map_src() ); ?>"
+				title="勤務地・面接地 地図"></iframe>
+		<?php endif; ?>
 	</div>
 </section>
 
